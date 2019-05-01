@@ -42,7 +42,6 @@ class SignUp extends Component {
                         <button className="btn pink lighten-1 z-depth-">Sign Up</button>
                     </div>
                 </form>
-
             </div>
         )
     }
