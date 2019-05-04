@@ -2,10 +2,16 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-firebase.firestore().settings.apply({ timestampsInSnapshots: true })
+const firebaseConfig = {
+    apiKey: "AIzaSyDRcXq8418ULAFhZ1xBYO5pqBiu_LF6qG8",
+    authDomain: "project-planner-c1384.firebaseapp.com",
+    databaseURL: "https://project-planner-c1384.firebaseio.com",
+    projectId: "project-planner-c1384",
+    storageBucket: "project-planner-c1384.appspot.com",
+    messagingSenderId: "122629424668",
+    appId: "1:122629424668:web:0f6e607bcfdefb55"
+  };
 
-fetch('/__/firebase/init.json').then(async response => {
-  firebase.initializeApp(await response.json());
-});
+firebase.initializeApp(firebaseConfig);
 
 export default firebase;
