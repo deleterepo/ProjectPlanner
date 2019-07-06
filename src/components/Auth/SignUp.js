@@ -20,7 +20,7 @@ class SignUp extends Component {
     }
 
     render() {
-        const { authError, auth } = this.props;
+        const { auth } = this.props;
 
         if (auth.uid) return <Redirect to='/' />
 
