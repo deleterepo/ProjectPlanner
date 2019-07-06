@@ -26,9 +26,9 @@ jobs:
           keys:
             # Find a cache corresponding to this specific package-lock.json checksum
             # when this file is changed, this key will fail
-            - v1-npm-deps-{{ checksum "./functions/package-lock.json" }}
+            - v1-npm-deps-functions-{{ checksum "./functions/package-lock.json" }}
             # Find the most recently generated cache used from any branch
-            - v1-npm-deps-
+            - v1-npm-deps-functions-
       
       - run:
           name: Install Firebase Dependencies
@@ -42,10 +42,10 @@ jobs:
 
       - run:
           name: Install Firebase Functions Dependencies
-          command: cd functions && npm install
+          command: cd functions && n-pm install
 
       - save_cache: 
-          key: v1-npm-deps-{{ checksum "./functions/package-lock.json" }}
+          key: v1-npm-deps-functions-{{ checksum "./functions/package-lock.json" }}
             
           paths:
             - ./functions/node_modules          
