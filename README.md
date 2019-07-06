@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/deleterepo/ProjectPlanner.svg?style=shield)](https://circleci.com/gh/deleterepo/ProjectPlanner)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
