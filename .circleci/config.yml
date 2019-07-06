@@ -1,16 +1,21 @@
-version: 2.1
-description: Orb for firebase deploy.
-commands:
-  deploy:
-    description: Deploy to firebase
-    parameters:
-      token:
-        type: string
-        description: Firebase Deploy Token
-    steps:
-      - run:
-          name: Install Firebase Tools
-          command: npm install --prefix=./firebase-deploy firebase-tools
-      - run:
-          name: Deploy to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=<< parameters.token >>
+     deploy-job:
+       docker:
+         - image: my-image-version-tag
+       working_directory: /tmp/my-project
+       steps:
+         - run:
+             name: Deploy Master to Firebase
+             command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
+
+    workflows:
+      version: 2
+
+      -deploy:
+        jobs:
+          - build-job
+          - deploy-job:
+              requires:
+                - build-job
+              filters:
+                branches:
+                  only: master
