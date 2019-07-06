@@ -23,8 +23,12 @@ jobs:
             - v1-npm-deps-
       
       - run:
-          name: Install Dependencies
+          name: Install Firebase Dependencies
           command: npm install
+
+      - run:
+          name: Install Firebase Functions Dependencies
+          command: cd functions && npm install
 
       - save_cache: 
           key: v1-npm-deps-{{ checksum "package-lock.json" }}
