@@ -10,7 +10,6 @@ deploy-job:
 
   workflows:
     version: 2
-
     -deploy:
       jobs:
         - build-job
