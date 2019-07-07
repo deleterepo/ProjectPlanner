@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/deleterepo/ProjectPlanner.svg?style=shield)](https://circleci.com/gh/deleterepo/ProjectPlanner)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2dc32426-4245-4abe-8ab2-c23c05a38063/deploy-status)](https://app.netlify.com/sites/quirky-curran-82ff68/deploys)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
